@@ -8,14 +8,16 @@ const resizeWorkspace = require('../resize_workspace');
 let sidemenu_percent;
 
 module.exports = () => {
+
   $('#navigation').click(() => {
     const $sidemenu = $('.sidemenu');
     const $workspace = $('.workspace');
 
-    $sidemenu.toggleClass('active');
+    //$sidemenu.toggleClass('active');
 
     $('.nav-dropdown').toggleClass('fa-caret-down fa-caret-right');
-    if ($sidemenu.hasClass('active')) {
+    /*
+	if ($sidemenu.hasClass('active')) {
         $sidemenu.animate({ "right": (100 - sidemenu_percent) + '%'}, "fast" );
         $workspace.animate({ "left": sidemenu_percent + '%' }, "fast" );
     } else {
@@ -25,6 +27,7 @@ module.exports = () => {
     }
 
     resizeWorkspace();
+	*/
   });
 
   $('#documentation').click(function () {

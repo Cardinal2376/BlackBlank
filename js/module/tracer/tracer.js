@@ -20,7 +20,7 @@ class Tracer {
       notified: '#f50057',
       visited: '#f50057',
       left: '#616161',
-      default: '#bdbdbd'
+      default: 'rgb(173, 216, 230)'
     };
 
     this.manager = app.getTracerManager();

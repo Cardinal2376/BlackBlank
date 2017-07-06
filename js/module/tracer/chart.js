@@ -120,12 +120,25 @@ const initView = (tracer) => {
       datasets: []
     },
     options: {
+	
       scales: {
         yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
+			ticks: {
+				beginAtZero:true,
+				fontSize: 20
+			},
+			gridLines: {
+				display: false
+			}
+		}],
+		xAxes: [{
+			ticks: {
+				fontSize: 20
+			},
+			gridLines: {
+				display: false
+			}
+		}],
       },
       animation: false,
       legend: false,
@@ -133,6 +146,7 @@ const initView = (tracer) => {
       maintainAspectRatio: false
     }
   });
+  
 };
 
 module.exports = ChartTracer;

@@ -227,8 +227,8 @@ nav h3 {
 
 .workspace {
     position: absolute;
-    bottom: 0;
-    left: 15%;
+	bottom: 0;
+    left: 0%;
     right: 0;
 }
 
@@ -239,7 +239,7 @@ section,
 .editor_container {
     position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 12px;
     left: 0;
     right: 0;
 }
@@ -266,6 +266,8 @@ section {
 .module_container {
     overflow: hidden;
     border: none;
+    background: #eeeeee;
+
 }
 
 .hide{
@@ -308,7 +310,8 @@ section {
     z-index: 5;
     padding: 4px;
     font-size: 14px;
-    background: rgba(0, 0, 0, .4);
+    background: #98cfb2;
+	color: #EEEEEE;
 }
 
 .module_wrapper > .wrapper {
@@ -345,6 +348,8 @@ section {
     border: 1px solid #505050;
     border-bottom: none;
 }
+
+#btn_doc 
 
 .close_bar,
 .files_bar {
@@ -404,7 +409,28 @@ section {
     padding: 8px;
     font-size: 12px;
 }
-
+#bottom-bar {
+    padding: 12px 30px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    text-align: right;
+	position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+}
+#left-bar {
+    position: absolute;
+	background: black;
+    top: 30px;
+    left: 0px;
+    height: 100%;
+    width: 20px;
+    z-index: 1;
+}
 #explanation:before {
     font-family: FontAwesome;
     content: '\f05a\00a0\00a0';
@@ -507,7 +533,8 @@ pre {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    background: #888;
+    background: #eeeeee;
+	color: #000000;
 }
 
 .mtbl-empty-row {
