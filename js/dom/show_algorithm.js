@@ -41,5 +41,5 @@ module.exports = (category, algorithm, data, requestedFile) => {
 
   showDescription(data);
   addFiles(category, algorithm, files, requestedFile);
-  utils.renderMathJax();
+  //utils.renderMathJax();
 };

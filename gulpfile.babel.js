@@ -17,7 +17,7 @@ import source from "vinyl-source-stream";
 import buffer from "vinyl-buffer";
 import pkg from "./package.json";
 
-const appName = 'algorithm_visualizer';
+const appName = 'BlackBlank';
 const appEntryPoint = './js/index.js';
 
 const outputPaths = {
@@ -146,7 +146,7 @@ gulp.task('watch', ['build'], function () {
   gulp.watch(cssDir, ['compile-css']);
 });
 
-// Heroku Production
+// 动态更新页面
 
 gulp.task('prod', ['build'], function () {
   connect.server({

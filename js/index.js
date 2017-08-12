@@ -44,9 +44,9 @@ $(() => {
     DOM.addCategories();
 
     //enable search feature
-    DOM.enableSearch ();
+    //DOM.enableSearch ();
     //enable fullscreen feature
-    DOM.enableFullScreen ();
+    //DOM.enableFullScreen ();
 
     // determine if the app is loading a pre-existing scratch-pad
     // or the home page
@@ -72,12 +72,14 @@ $(() => {
     }
 
   });
-
+  
+/*
   Server.loadWikiList().then((data) => {
     app.setWikiList(data.wikis);
 
     DOM.showWiki('Tracer');
   });
+*/
 
   var v1LoadedScratch = getHashValue('scratch-paper');
   var v2LoadedScratch = getParameterByName('scratch-paper');
@@ -87,3 +89,4 @@ $(() => {
   }
 
 });
+
