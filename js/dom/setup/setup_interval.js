@@ -19,13 +19,13 @@ const normalize = (sec) => {
   let message;
   if (sec < minInterval) {
     interval = minInterval;
-    message = `Interval of ${sec} seconds is too low. Setting to min allowed interval of ${minInterval} second(s).`;
+    message = `时间间隔太小，请设置在${minInterval}秒以上。`;
   } else if (sec > maxInterval) {
     interval = maxInterval;
-    message = `Interval of ${sec} seconds is too high. Setting to max allowed interval of ${maxInterval} second(s).`;
+    message = `时间间隔太大，请设置在${maxInterval}秒以下。`;
   } else {
     interval = sec;
-    message = `Interval has been set to ${sec} second(s).`
+    message = `时间间隔被重置为${sec}秒。`
   }
 
   return [interval, message];

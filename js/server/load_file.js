@@ -49,17 +49,10 @@ module.exports = (category, algorithm, file, explanation) => {
         setPath(category, algorithm, file);
       }
       $('#explanation').html(explanation);
-
       let dir = getFileDir(category, algorithm, file);
       app.setLastFileUsed(dir);
       const cachedFile = app.getCachedFile(dir);
-
-      if (cachedContentExists(cachedFile)) {
-        app.getEditor().setContent(cachedFile);
-        resolve();
-      } else {
-        loadFileAndUpdateContent(dir).then(resolve, reject);
-      }
+      app.getEditor().setContent(cachedFile);
     }
   });
 };

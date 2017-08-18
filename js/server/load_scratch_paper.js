@@ -33,9 +33,8 @@ module.exports = (gistID) => {
         app.updateCachedFile(dir, {
           data: algoData,
           code: algoCode,
-          'CREDIT.md': 'Shared by an anonymous user from http://parkjs814.github.io/AlgorithmVisualizer'
+          'CREDIT.md': 'Shared by a user'
         });
-
         resolve({
           category,
           algorithm,

@@ -15,15 +15,12 @@ module.exports = () => {
 
   $('#btn_share').click(function () {
 
-    const $icon = $(this).find('.fa-share');
-    $icon.addClass('fa-spin fa-spin-faster');
-
     Server.shareScratchPaper().then((url) => {
-      $icon.removeClass('fa-spin fa-spin-faster');
-      $('#shared').removeClass('collapse');
-      $('#shared').val(url);
-      Toast.showInfoToast('Shareable link is created.');
+	  $('#author').text($('#name-input').val());
+	  $('#shared-link').text(url);
+	  $('#myModal').modal();
     });
+	
   });
 
   // control

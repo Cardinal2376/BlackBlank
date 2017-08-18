@@ -7,27 +7,16 @@ const {
 } = $;
 
 const addFileToDOM = (category, algorithm, file, explanation) => {
-  var $file = $('<button>')
-    .append(file)
-    .attr('data-file', file)
-    .click(function () {
-      Server.loadFile(category, algorithm, file, explanation);
-      $('.files_bar > .wrapper > button').removeClass('active');
-      $(this).addClass('active');
-    });
-  $('.files_bar > .wrapper').append($file);
-  return $file;
+	console.log("executed");
+    Server.loadFile(category, algorithm, file, explanation);
 };
 
 module.exports = (category, algorithm, files, requestedFile) => {
-  $('.files_bar > .wrapper').empty();
-
+	console.log("add_file" + category);
+	console.log("add_file" + algorithm);
+	console.log("file");
+	console.log(files);
   each(files, (file, explanation) => {
-    var $file = addFileToDOM(category, algorithm, file, explanation);
-    $file.addClass('tab_button');
-    if (requestedFile && requestedFile == file) $file.click();
+    addFileToDOM(category, algorithm, file, explanation);
   });
-
-  if (!requestedFile) $('.files_bar > .wrapper > button').first().click();
-  $('.files_bar > .wrapper').scroll();
 };

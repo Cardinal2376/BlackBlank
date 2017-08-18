@@ -4,7 +4,7 @@
     "... top editor": "predefines data variables that will be shown in a visualizing module.",
     "... bottom editor": "actually implements and visualizes the algorithm."
   },
-  "Be our contributor": "If you want to add your code to the side menu, check out our <strong><a href='https://github.com/parkjs814/AlgorithmVisualizer/wiki'>wiki</a></strong>!",
+  "Be our contributor": "Come and help us!",
   "files": {
     "scratch_paper": "Write down your own algorithm!"
   }

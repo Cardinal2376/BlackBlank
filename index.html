@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>BlackBlank-A platform to display your algorithms</title>
-	<link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css"/>
+	<link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css"/>
     <link rel="stylesheet" href="public/BlackBlank.css"/>
 </head>
 <body>
@@ -62,12 +62,13 @@
             
         </div>
         <!--导航-->
+		
 		<div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><p class="navbar-text">输入作者名字后分享：</p></li>
 					<li><form class="navbar-form navbar-right" role="input">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name">
+							<input id="name-input" type="text" class="form-control" placeholder="Your Name">
 						</div>
 					</form></li>
 				<li><a id="btn_share"><span class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;Share</a></li>
@@ -75,7 +76,24 @@
 		</div>
     </div>
 </nav>
-
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        作者名字：<div id="author"></div>
+		生成的链接:<div id="shared-link"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="public/bootstrap.min.js"></script>
 <script src="public/lib/showdown.min.js"></script>

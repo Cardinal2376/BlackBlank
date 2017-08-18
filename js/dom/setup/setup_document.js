@@ -8,7 +8,7 @@ module.exports = () => {
     if (/^(https?:\/\/).+/.test(href)) {
       e.preventDefault();
       if (!window.open(href, '_blank')) {
-        alert('Please allow popups for this site');
+        alert('请允许弹出式窗口！');
       }
     }
   });

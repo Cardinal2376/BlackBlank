@@ -2,11 +2,8 @@
 
 const setupDividers = require('./setup_dividers');
 const setupDocument = require('./setup_document');
-const setupFilesBar = require('./setup_files_bar');
 const setupInterval = require('./setup_interval');
 const setupModuleContainer = require('./setup_module_container');
-const setupTabContainer = require('./setup_tab_container');
-const setupSideMenu = require('./setup_side_menu');
 const setupTopMenu = require('./setup_top_menu');
 const setupWindow = require('./setup_window');
 
@@ -25,20 +22,11 @@ const setup = () => {
   // document
   setupDocument();
 
-  // files bar
-  setupFilesBar();
-
   // interval
   setupInterval();
 
   // module container
   setupModuleContainer();
-
-  // tab container
-  setupTabContainer();
-
-  // side menu
-  setupSideMenu();
 
   // top menu
   setupTopMenu();

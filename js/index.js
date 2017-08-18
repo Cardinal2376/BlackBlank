@@ -46,7 +46,7 @@ $(() => {
     //enable search feature
     //DOM.enableSearch ();
     //enable fullscreen feature
-    //DOM.enableFullScreen ();
+    DOM.enableFullScreen();
 
     // determine if the app is loading a pre-existing scratch-pad
     // or the home page
@@ -58,28 +58,14 @@ $(() => {
     if (isScratchPaper(category)) {
       if (algorithm) {
         Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
-          DOM.showAlgorithm(category, algorithm, data);
-        });
-      } else {
-        Server.loadAlgorithm(category).then((data) => {
-          DOM.showAlgorithm(category, null, data);
+		  DOM.showAlgorithm(category, algorithm, data);
         });
       }
-    } else if (category && algorithm) {
-      DOM.showRequestedAlgorithm(category, algorithm, file);
     } else {
-      DOM.showFirstAlgorithm();
     }
 
   });
   
-/*
-  Server.loadWikiList().then((data) => {
-    app.setWikiList(data.wikis);
-
-    DOM.showWiki('Tracer');
-  });
-*/
 
   var v1LoadedScratch = getHashValue('scratch-paper');
   var v2LoadedScratch = getParameterByName('scratch-paper');

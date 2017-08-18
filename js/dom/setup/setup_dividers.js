@@ -89,7 +89,6 @@ const addDividerToDom = (divider) => {
 
 module.exports = () => {
   const dividers = [
-    ['v', $('.sidemenu'), $('.workspace')],
     ['v', $('.viewer_container'), $('.editor_container')],
     ['h', $('.data_container'), $('.code_container')]
   ];
