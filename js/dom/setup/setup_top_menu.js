@@ -4,7 +4,6 @@ const app = require('../../app');
 const Server = require('../../server');
 const Toast = require('../toast');
 const TopMenu = require('../top_menu');
-const create = require('../../create');
 
 module.exports = () => {
 
@@ -72,8 +71,5 @@ module.exports = () => {
     app.getTracerManager().nextStep();
   });
 
-  $btnGenerate.click(() => {
-     create.init();
-  });
 
 };
