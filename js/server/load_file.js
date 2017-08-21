@@ -39,6 +39,7 @@ const cachedContentExists = (cachedFile) => {
 };
 
 module.exports = (category, algorithm, file, explanation) => {
+	console.log("exed");
   return new RSVP.Promise((resolve, reject) => {
     if (checkLoading()) {
       reject();

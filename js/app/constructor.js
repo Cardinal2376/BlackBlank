@@ -17,7 +17,6 @@ const state = {
   tracerManager: null,
   categories: null,
   loadedScratch: null,
-  wikiList: null
 };
 
 const initState = (tracerManager) => {
@@ -26,7 +25,6 @@ const initState = (tracerManager) => {
   state.tracerManager = tracerManager;
   state.categories = {};
   state.loadedScratch = null;
-  state.wikiList = [];
 };
 
 /**
@@ -77,18 +75,6 @@ const App = function () {
 
   this.setLoadedScratch = (loadedScratch) => {
     state.loadedScratch = loadedScratch;
-  };
-
-  this.getWikiList = () => {
-    return state.wikiList;
-  };
-
-  this.setWikiList = (wikiList) => {
-    state.wikiList = wikiList;
-  };
-
-  this.hasWiki = (wiki) => {
-    return ~state.wikiList.indexOf(wiki);
   };
 
   const tracerManager = TracerManager.init();

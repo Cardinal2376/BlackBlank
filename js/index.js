@@ -41,6 +41,7 @@ $(() => {
   extend(true, window, modules);
 
   Server.loadCategories().then((data) => {
+	 console.log(data);
     app.setCategories(data);
     DOM.addCategories();
 
@@ -57,19 +58,17 @@ $(() => {
 	//从gist上获取代码并可视化
 	if(isScratchPaper(category)) {
 		Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
+		console.log("exed");
 		  DOM.showAlgorithm(category, algorithm, data);
 		});
 	}
 		
   });
   var v1LoadedScratch = getHashValue('scratch-paper');
-  console.log(v1LoadedScratch);
   var v2LoadedScratch = getParameterByName('scratch-paper');
-  console.log(v2LoadedScratch);
   var vLoadedScratch = v1LoadedScratch || v2LoadedScratch;
   if (vLoadedScratch) {
     window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + '#path=scratch/' + vLoadedScratch;
   }
-	console.log(window.location.href);
 });
 

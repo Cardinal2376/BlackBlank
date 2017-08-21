@@ -2,7 +2,6 @@
 
 const app = require('../app');
 const utils = require('../utils');
-const showDescription = require('./show_description');
 const addFiles = require('./add_files');
 const Server = require('../server');
 module.exports = (category, algorithm, data) => {

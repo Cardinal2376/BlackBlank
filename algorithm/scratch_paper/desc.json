@@ -1,0 +1,11 @@
+{
+  "Scratch Paper": "Write down your own algorithm to be visualized.",
+  "Code written in the ...": {
+    "... top editor": "predefines data variables that will be shown in a visualizing module.",
+    "... bottom editor": "actually implements and visualizes the algorithm."
+  },
+  "Be our contributor": "Come and help us!",
+  "files": {
+    "scratch_paper": "Write down your own algorithm!"
+  }
+}
