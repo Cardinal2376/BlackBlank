@@ -29,10 +29,10 @@ Black Blank是一个基于网页的算法可视化工具，它的目的在于帮
 
 演示模块分为一维数组(Array1D)，二维数组(Array2D)，柱状图(Chart)，图(Graph)。其中图可以更细分为无向无权图、有向无权图、无向有权图、有向有权图四种类型。
 
-具体API请参考:[**演示模块**](Modules)
+具体API请参考:[**演示模块**](https://github.com/Cardinal2376/BlackBlank/wiki/Tracer)
 
 ###安装文档
-本项目使用gulp一键部署，具体安装文档请参考：[**安装文档**](Project-Details)
+本项目使用gulp一键部署，具体安装文档请参考：[**安装文档**](https://github.com/Cardinal2376/BlackBlank/wiki/Project-Details)
 
 ###致谢
 本项目由华东师范大学计算机科学与软件工程学院资金支持
