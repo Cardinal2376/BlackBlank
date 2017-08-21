@@ -1,14 +1,12 @@
-**LogTracer** inherits **[Tracer](Tracer)**.
+﻿**LogTracer** 继承 **[Tracer](Tracer)**.
 
-## Methods
+## 方法
 
-| Method | Description |
+| 方法 | 描述 |
 |--------|-------------|
-| **LogTracer**((String) name)| create LogTracer and set its name |
-| **_print**(msg) | print `msg` |
-| **_setData**(args) | _inherited, but not used_ |
-| **_clear**() | erase all logs |
-| **_wait**() | wait for a certain amount of time |
+| **LogTracer**((String) name)| 建立 LogTracer 并设置它的名字 |
+| **_print**(msg) | 输出一行文字 `msg` |
+| **_setData**(args) | _继承, 但不用_ |
+| **_clear**() | 清除文字 |
+| **_wait**() | 生成一个演示步骤 |
 
-## Usage
-[Show examples](https://github.com/search?utf8=✓&q=LogTracer+repo%3Aparkjs814%2FAlgorithmVisualizer+path%3A%2Falgorithm&type=Code&ref=advsearch&l=&l=)

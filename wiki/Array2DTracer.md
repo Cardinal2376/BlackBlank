@@ -1,34 +1,31 @@
-**Array2DTracer** inherits **[Tracer](Tracer)**.
+﻿**Array2DTracer** 继承 **[Tracer](Tracer)**.
 
-## Methods
+## 方法
 
-| Method | Description |
+| 方法 | 描述 |
 |--------|-------------|
-| **Array2DTracer**((String) name)| create Array2DTracer and set its name |
-| **palette**((Object) {selected, notified, default})| set colors (e.g., `{selected: 'green', notified: '#FFA500', default: 'rgb(255,255,255)'}`) |
-| **_setData**((Number[][]) data)| set two-dimensional array data to visualize |
-| **_notify**((Number) x, (Number) y, (Number) v) | notify that the value of (x, y) has been changed to _v_ |
-| **_denotify**((Number) x, (Number) y) | stop notifying that the value of (x, y) has been changed |
-| **_select**((Number) sx, (Number) sy, (Number) ex, (Number) ey) | select a rectangle formed by (sx, sy) and (ex, ey) |
-| **_select**((Number) x, (Number) y) | select (x, y) |
-| **_selectRow**((Number) x, (Number) sy, (Number) ey) | equivalent to **_select**(x, sy, x, ey) |
-| **_selectCol**((Number) y, (Number) sx, (Number) ex) | equivalent to **_select**(sx, y, ex, y) |
-| **_deselect**((Number) sx, (Number) sy, (Number) ex, (Number) ey) | deselect a rectangle formed by (sx, sy) and (ex, ey) |
-| **_deselect**((Number) x, (Number) y) | deselect (x, y) |
-| **_deselectRow**((Number) x, (Number) sy, (Number) ey) | equivalent to **_deselect**(x, sy, x, ey) |
-| **_deselectCol**((Number) y, (Number) sx, (Number) ex) | equivalent to **_deselect**(sx, y, ex, y) |
-| **_separate**((Number) x, (Number) y) | put dividers between _x_-th and (_x+1_)-th rows and between _y_-th and (_y+1_)-th columns |
-| **_separateRow**((Number) x) | put a divider between _x_-th and (_x+1_)-th rows |
-| **_separateCol**((Number) y) | put a divider between _y_-th and (_y+1_)-th columns |
-| **_deseparate**((Number) x, (Number) y) | remove dividers between _x_-th and (_x+1_)-th rows and between _y_-th and (_y+1_)-th columns |
-| **_deseparateRow**((Number) x) | remove a divider between _x_-th and (_x+1_)-th rows |
-| **_deseparateCol**((Number) y) | remove a divider between _y_-th and (_y+1_)-th columns |
-| **_clear**() | erase traces on the array |
-| **_wait**() | wait for a certain amount of time |
+| **Array2DTracer**((String) name)| 创建 Array2DTracer 并设置它的名字 |
+| **palette**((Object) {selected, notified, default})| 设置颜色 (e.g., `{selected: 'green', notified: '#FFA500', default: 'rgb(255,255,255)'}`) |
+| **_setData**((Number[][]) data)| 设置二维数组数据 |
+| **_notify**((Number) x, (Number) y, (Number) v) | 表示 (x, y) 的值变为 _v_ |
+| **_denotify**((Number) x, (Number) y) | 取消表示 (x, y) 改变 |
+| **_select**((Number) sx, (Number) sy, (Number) ex, (Number) ey) | 选择矩阵范围从 (sx, sy) 到 (ex, ey) |
+| **_select**((Number) x, (Number) y) | 选择 (x, y) |
+| **_selectRow**((Number) x, (Number) sy, (Number) ey) | 选择一行 **_select**(x, sy, x, ey) |
+| **_selectCol**((Number) y, (Number) sx, (Number) ex) | 选择一列 **_select**(sx, y, ex, y) |
+| **_deselect**((Number) sx, (Number) sy, (Number) ex, (Number) ey) | 取消选择矩阵从 (sx, sy) 到 (ex, ey) |
+| **_deselect**((Number) x, (Number) y) | 取消选择 (x, y) |
+| **_deselectRow**((Number) x, (Number) sy, (Number) ey) | 取消选择行 **_deselect**(x, sy, x, ey) |
+| **_deselectCol**((Number) y, (Number) sx, (Number) ex) | 取消选择列 **_deselect**(sx, y, ex, y) |
+| **_separate**((Number) x, (Number) y) | 设置分隔在行 _x_-th 到 (_x+1_)-th 和列 _y_-th 到 (_y+1_)-th 之间 |
+| **_separateRow**((Number) x) | 分隔_x_-th 到 (_x+1_)-th行  |
+| **_separateCol**((Number) y) | 分隔 _y_-th 到 (_y+1_)-th列  |
+| **_deseparate**((Number) x, (Number) y) | 取消分隔行 _x_-th 到 (_x+1_)-th 和列 _y_-th 到 (_y+1_)-th 之间 |
+| **_deseparateRow**((Number) x) | 取消分隔_x_-th 到 (_x+1_)-th行 |
+| **_deseparateCol**((Number) y) | 取消分隔 _y_-th 到 (_y+1_)-th列 |
+| **_clear**() | 清除数据 |
+| **_wait**() | 生成一个演示步骤 |
 
-## Child Modules
+## 子模块
 
 * [Array1DTracer](Array1DTracer)
-
-## Usage
-[Show examples](https://github.com/search?utf8=✓&q=Array2DTracer+repo%3Aparkjs814%2FAlgorithmVisualizer+path%3A%2Falgorithm&type=Code&ref=advsearch&l=&l=)

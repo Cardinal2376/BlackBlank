@@ -1,0 +1,19 @@
+# 常见的算法和数据结构
+###排序算法
+[1.冒泡排序](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[2.插入排序](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[3.分块排序(桶排序)](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[4.计数排序](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+###动态规划
+[1.斐波那契数列](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[2.卡特兰数](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[3.最长公共子串（LCS）](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[4.最长上升子序列（LIS）](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[5.0-1背包](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+###暴力搜索
+[1.深度优先搜索-DFS](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[2.宽度优先搜索-BFS](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+###图论
+[1.多源最短路-Floyd](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[2.单源最短路-Dijkstra](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[3.单源最短路-BellmanFord](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)

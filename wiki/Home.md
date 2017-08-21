@@ -1,35 +1,41 @@
-Check out:
-- [**Contributing**](Contributing) for details on how to contribute to our project and 
-- [**Project Details**](Project-Details) for details on how to build/run the project
+﻿# Black Blank
+Black Blank是一个基于网页的算法可视化工具，它的目的在于帮助使用者快速构建算法的演示。
 
-## Hierarchy of `algorithm` Directory
-| Path | Description |
-|------|-------------|
-| [/algorithm/category.json](https://github.com/parkjs814/AlgorithmVisualizer/tree/gh-pages/algorithm/category.json) | This file contains the list of categories and their algorithms. |
-| [/algorithm/[category]/[algorithm]/desc.json](https://github.com/parkjs814/AlgorithmVisualizer/blob/gh-pages/algorithm/graph_search/dfs/desc.json) | This file contains the description of the algorithm and the list of its examples. |
-| [/algorithm/[category]/[algorithm]/[example]/data.js](https://github.com/parkjs814/AlgorithmVisualizer/blob/gh-pages/algorithm/graph_search/dfs/tree/data.js) | This file predefines data variables that will be shown in a visualizing module. |
-| [/algorithm/[category]/[algorithm]/[example]/code.js](https://github.com/parkjs814/AlgorithmVisualizer/blob/gh-pages/algorithm/graph_search/dfs/tree/code.js) | This file actually implements and visualizes the algorithm. |
+主要特点：
 
-## Visualizing Modules
-* [Tracer](Tracer)
-* [LogTracer](LogTracer)
-* [Array2DTracer](Array2DTracer)
-* [Array1DTracer](Array1DTracer)
-* [DirectedGraphTracer](DirectedGraphTracer)
-* [UndirectedGraphTracer](UndirectedGraphTracer)
-* [WeightedDirectedGraphTracer](WeightedDirectedGraphTracer)
-* [WeightedUndirectedGraphTracer](WeightedUndirectedGraphTracer)
-* [ChartTracer](ChartTracer)
+ - 使用JavaScript作为算法实现的语言，无需编译，极速演示
+ - 所见即所得，演示模块根据代码实时变化
+ - 支持生成链接，快速分享
+ - 无需登录，公开分享
 
-## Creating Random Data
-| Function | Description |
-|----------|-------------|
-| **Integer.random**((Number) min, (Number) max) | Create a random integer inclusively between _min_ and _max_. |
-| **Array2D.random**((Number) N, (Number) M, (Number) min, (Number) max) | Create random _N_ * _M_ array data that elements have a random value between _min_ and _max_. |
-| **Array2D.randomSorted**((Number) N, (Number) M, (Number) min, (Number) max) | Basically same as `Array2D.random` but elements in each row are sorted in increasing order. |
-| **Array1D.random**((Number) N, (Number) min, (Number) max) | Create random one-dimensional array data of size _N_ that elements have a random value between _min_ and _max_. |
-| **Array1D.randomSorted**((Number) N, (Number) min, (Number) max) | Basically same as `Array1D.random` but elements are sorted in increasing order. |
-| **DirectedGraph.random**((Number) N, (Number) ratio) | Create random graph data containing _N_ nodes and having directed edges between nodes at the probability of _ratio_ (between 0 and 1). |
-| **UndirectedGraph.random**((Number) N, (Number) ratio) | Basically same as `DirectedGraph.random` but edges do not have direction. |
-| **WeightedDirectedGraph.random**((Number) N, (Number) ratio, (Number) min, (Number) max) | Basically same as `DirectedGraph.random` but edges have a random weight between _min_ and _max_. |
-| **WeightedUndirectedGraph.random**((Number) N, (Number) ratio) | Basically same as `WeightedDirectedGraph.random` but edges do not have direction. |
+
+//A gif here
+
+演示效果如上图所示，左侧区域演示算法，右侧区域编辑代码，点击导航栏运行即可开始动画。
+在编辑代码的过程中，左侧演示区域会根据用到的演示模块实时变化。
+详见Demo: http://182.92.182.233/
+
+###常见的算法和数据结构演示
+我们提供了常用的算法和数据机构的演示Demo，完整版请移步:
+[**常见的算法和数据结构**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+
+点击下方链接亦可快速访问：
+
+[**冒泡排序**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[**动态规划(0-1背包)**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[**单源最短路(Dijkstra)**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+
+### 演示模块
+
+演示模块分为一维数组(Array1D)，二维数组(Array2D)，柱状图(Chart)，图(Graph)。其中图可以更细分为无向无权图、有向无权图、无向有权图、有向有权图四种类型。
+
+具体API请参考:[**演示模块**](https://github.com/Cardinal2376/BlackBlank/wiki/Modules)
+
+###安装文档
+本项目使用gulp一键部署，具体安装文档请参考：[**安装文档**](https://github.com/Cardinal2376/BlackBlank/wiki/Tracer)
+
+###致谢
+本项目由华东师范大学计算机科学与软件工程学院资金支持
+首页：http://www.sei.ecnu.edu.cn/
+
+作者：曹智杰 及其团队（汪贻俊、陈伟文、耿煜、陈昶嘉）

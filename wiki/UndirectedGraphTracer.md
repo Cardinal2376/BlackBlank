@@ -1,18 +1,16 @@
-**UndirectedGraphTracer** inherits **[DirectedGraphTracer](DirectedGraphTracer)**.
+﻿**UndirectedGraphTracer** 继承 **[DirectedGraphTracer](DirectedGraphTracer)**.
 
-## Methods
+## Methods方法
 
-| Method | Description |
-|--------|-------------|
-| **UndirectedGraphTracer**((String) name)| create UndirectedGraphTracer and set its name |
-| **attach**((LogTracer) logTracer)| automatically print log when visiting or leaving nodes |
-| **palette**((Object) {visited, left, default})| set colors (e.g., `{visited: 'green', left: '#FFA500', default: 'rgb(255,255,255)'}`) |
-| **_setTreeData**((Number[][]) tree, (Number) root) | set tree data to visualize |
-| **_setData**((Number[][]) graph) | set graph data to visualize |
-| **_visit**((Number) target, (Number) source) | visit _target_ node from _source_ node |
-| **_leave**((Number) target, (Number) source) | leave _target_ node to _source_ node |
-| **_clear**() | erase traces on the graph |
-| **_wait**() | wait for a certain amount of time |
+| Method 方法 | Description 描述 |
+|-------------|-----------------|
+| **UndirectedGraphTracer**((String) name)| 创建一个 UndirectedGraphTracer 并命名 |
+| **attach**((LogTracer) logTracer)| 连接一个LogTracer,自动输出 |
+| **palette**((Object) {visited, left, default})| 设置颜色 (e.g., `{visited: 'green', left: '#FFA500', default: 'rgb(255,255,255)'}`) |
+| **_setTreeData**((Number[][]) tree, (Number) root) | 设置树的可视化数据 |
+| **_setData**((Number[][]) graph) | 设置图的可视化数据 |
+| **_visit**((Number) target, (Number) source) | 访问 _target_ node 从 _source_ node |
+| **_leave**((Number) target, (Number) source) | 取消访问 _target_ node 到 _source_ node |
+| **_clear**() | 清除数据 |
+| **_wait**() | 生成一个演示步骤 |
 
-## Usage
-[Show examples](https://github.com/search?utf8=✓&q=UndirectedGraphTracer+repo%3Aparkjs814%2FAlgorithmVisualizer+path%3A%2Falgorithm&type=Code&ref=advsearch&l=&l=)

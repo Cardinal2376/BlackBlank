@@ -1,23 +1,20 @@
-**Array1DTracer** inherits **[Array2DTracer](Array2DTracer)**.
+﻿**Array1DTracer** 继承 **[Array2DTracer](Array2DTracer)**.
 
-## Methods
+## 方法
 
-| Method | Description |
+| 方法 | 描述 |
 |--------|-------------|
-| **Array1DTracer**((String) name) | create Array1DTracer and set its name |
-| **attach**((ChartTracer) chartTracer)| automatically visualize array data to the bar chart |
-| **palette**((Object) {selected, notified, default})| set colors (e.g., `{selected: 'green', notified: '#FFA500', default: 'rgb(255,255,255)'}`) |
-| **_setData**((Number[]) data)| set one-dimensional array data to visualize |
-| **_notify**((Number) idx, (Number) v) | notify that the value of element _idx_ has been changed to _v_ |
-| **_denotify**((Number) idx) | stop notifying that the value of element _idx_ has been changed |
-| **_select**((Number) s, (Number) e) | select a range between elements _s_ and _e_ |
-| **_select**((Number) idx) | select element _idx_ |
-| **_deselect**((Number) s, (Number) e) | deselect a range between elements _s_ and _e_ |
-| **_deselect**((Number) idx) | deselect element _idx_ |
-| **_separate**((Number) idx) | put a divider between elements _idx_ and (_idx+1_) |
-| **_deseparate**((Number) idx) | remove a divider between elements _idx_ and (_idx+1_) |
-| **_clear**() | erase traces on the array |
-| **_wait**() | wait for a certain amount of time |
-
-## Usage
-[Show examples](https://github.com/search?utf8=✓&q=Array1DTracer+repo%3Aparkjs814%2FAlgorithmVisualizer+path%3A%2Falgorithm&type=Code&ref=advsearch&l=&l=)
+| **Array1DTracer**((String) name) | 建立 Array1DTracer 并设置它的名字 |
+| **attach**((ChartTracer) chartTracer)| 连接一个ChartTracer，同步演示 |
+| **palette**((Object) {selected, notified, default})| 设置颜色 (e.g., `{selected: 'green', notified: '#FFA500', default: 'rgb(255,255,255)'}`) |
+| **_setData**((Number[]) data)| 设置一维数组数据 |
+| **_notify**((Number) idx, (Number) v) | 表示第_idx_项的值已经变为 _v_ |
+| **_denotify**((Number) idx) | 取消高亮显示第_idx_项 |
+| **_select**((Number) s, (Number) e) | 选择范围从 _s_ 到 _e_ |
+| **_select**((Number) idx) | 选择元素 _idx_ |
+| **_deselect**((Number) s, (Number) e) | 取消选择元素从 _s_ 到 _e_ |
+| **_deselect**((Number) idx) | 取消选择元素 _idx_ |
+| **_separate**((Number) idx) | 设置一个分隔在 _idx_ 到 (_idx+1_)之间 |
+| **_deseparate**((Number) idx) | 移除一个分隔在 _idx_ 到 (_idx+1_) 之间|
+| **_clear**() | 清除数据 |
+| **_wait**() | 生成一个演示步骤 |

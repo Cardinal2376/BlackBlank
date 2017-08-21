@@ -1,19 +1,16 @@
-**WeightedUndirectedGraphTracer** inherits **[WeightedDirectedGraphTracer](WeightedDirectedGraphTracer)**.
+﻿**WeightedUndirectedGraphTracer** 继承 **[WeightedDirectedGraphTracer](WeightedDirectedGraphTracer)**.
 
 ## Methods
 
 | Method | Description |
 |--------|-------------|
-| **WeightedUnirectedGraphTracer**((String) name)| create WeightedUnirectedGraphTracer and set its name |
-| **attach**((LogTracer) logTracer)| automatically print log when visiting or leaving nodes |
-| **palette**((Object) {visited, left, default})| set colors (e.g., `{visited: 'green', left: '#FFA500', default: 'rgb(255,255,255)'}`) |
-| **_setTreeData**((Number[][]) tree, (Number) root) | set tree data to visualize |
-| **_setData**((Number[][]) graph) | set graph data to visualize |
-| **_weight**((Number) target, (Number) weight) | set weight of _target_ node |
-| **_visit**((Number) target, (Number) source, (Number) weight) | visit _target_ node from _source_ node and set weight of _target_ node |
-| **_leave**((Number) target, (Number) source, (Number) weight) | leave _target_ node to _source_ node and set weight of _target_ node |
-| **_clear**() | erase traces on the graph |
-| **_wait**() | wait for a certain amount of time |
-
-## Usage
-[Show examples](https://github.com/search?utf8=✓&q=WeightedUndirectedGraphTracer+repo%3Aparkjs814%2FAlgorithmVisualizer+path%3A%2Falgorithm&type=Code&ref=advsearch&l=&l=)
+| **WeightedUnirectedGraphTracer**((String) name)| 创建 WeightedUnirectedGraphTracer 并命名 |
+| **attach**((LogTracer) logTracer)| 连接一个LogTracer,自动输出 |
+| **palette**((Object) {visited, left, default})| 设置颜色 (e.g., `{visited: 'green', left: '#FFA500', default: 'rgb(255,255,255)'}`) |
+| **_setTreeData**((Number[][]) tree, (Number) root) | 设置树的可视化数据 |
+| **_setData**((Number[][]) graph) | 设置图的可视化数据 |
+| **_weight**((Number) target, (Number) weight) | 设置 _target_ node 的权值 |
+| **_visit**((Number) target, (Number) source, (Number) weight) | 访问 _target_ node 从 _source_ node & 设置 _target_ node 的权值 |
+| **_leave**((Number) target, (Number) source, (Number) weight) | 取消访问 _target_ node 到 _source_ node & 设置 _target_ node 的权值 |
+| **_clear**() | 清除数据 |
+| **_wait**() | 生成一个演示步骤 |
