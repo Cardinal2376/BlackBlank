@@ -26,53 +26,50 @@ const {
   getPath
 } = require('./server/helpers');
 
-// set global promise error handler
+//设置全局RSVP
 RSVP.on('error', function (reason) {
   console.assert(false, reason);
 });
 
 $(() => {
-  // initialize the application and attach in to the instance module
+
+  //初始化app
   const appConstructor = new AppConstructor();
   extend(true, app, appConstructor);
 
-  // load modules to the global scope so they can be evaled
+  //全局加载modules
   extend(true, window, modules);
 
   Server.loadCategories().then((data) => {
     app.setCategories(data);
     DOM.addCategories();
 
-    //enable search feature
-    //DOM.enableSearch ();
-    //enable fullscreen feature
+    //FullScreen功能有效
     DOM.enableFullScreen();
 
-    // determine if the app is loading a pre-existing scratch-pad
-    // or the home page
+    //解析路由
     const {
       category,
       algorithm,
       file
     } = getPath();
-    if (isScratchPaper(category)) {
-      if (algorithm) {
-        Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
+	
+	//从gist上获取代码并可视化
+	if(isScratchPaper(category)) {
+		Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
 		  DOM.showAlgorithm(category, algorithm, data);
-        });
-      }
-    } else {
-    }
-
+		});
+	}
+		
   });
-  
-
   var v1LoadedScratch = getHashValue('scratch-paper');
+  console.log(v1LoadedScratch);
   var v2LoadedScratch = getParameterByName('scratch-paper');
+  console.log(v2LoadedScratch);
   var vLoadedScratch = v1LoadedScratch || v2LoadedScratch;
   if (vLoadedScratch) {
     window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + '#path=scratch/' + vLoadedScratch;
   }
-
+	console.log(window.location.href);
 });
 
