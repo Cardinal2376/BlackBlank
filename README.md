@@ -17,7 +17,7 @@ Black Blank是一个基于网页的算法可视化工具，它的目的在于帮
 
 ###常见的算法和数据结构演示
 我们提供了常用的算法和数据机构的演示Demo，完整版请移步:
-[**常见的算法和数据结构**](AlgoDemo)
+[**常见的算法和数据结构**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
 
 点击下方链接亦可快速访问：
 
