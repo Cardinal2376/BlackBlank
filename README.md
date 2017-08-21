@@ -17,25 +17,25 @@ Black Blank是一个基于网页的算法可视化工具，它的目的在于帮
 
 ###常见的算法和数据结构演示
 我们提供了常用的算法和数据机构的演示Demo，完整版请移步:
-[**常见的算法和数据结构**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[**常见的算法和数据结构**](AlgoDemo)
 
 点击下方链接亦可快速访问：
 
-[**冒泡排序**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
-[**动态规划(0-1背包)**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
-[**单源最短路(Dijkstra)**](https://github.com/Cardinal2376/BlackBlank/wiki/AlgoDemo)
+[**冒泡排序**](http://182.92.182.233:8080/#path=scratch/83c6ca1f8e834da3fc64f515f1c558ae)
+[**动态规划(最长公共子串LCS)**](http://182.92.182.233:8080/#path=scratch/1d598b793022da0e81d0e63870089bd6)
+[**单源最短路(Dijkstra)**](http://182.92.182.233:8080/#path=scratch/e4ec7578631d0c52bb59b8339550518d)
 
 ### 演示模块
 
 演示模块分为一维数组(Array1D)，二维数组(Array2D)，柱状图(Chart)，图(Graph)。其中图可以更细分为无向无权图、有向无权图、无向有权图、有向有权图四种类型。
 
-具体API请参考:[**演示模块**](https://github.com/Cardinal2376/BlackBlank/wiki/Modules)
+具体API请参考:[**演示模块**](Modules)
 
 ###安装文档
-本项目使用gulp一键部署，具体安装文档请参考：[**安装文档**](https://github.com/Cardinal2376/BlackBlank/wiki/Tracer)
+本项目使用gulp一键部署，具体安装文档请参考：[**安装文档**](Project-Details)
 
 ###致谢
 本项目由华东师范大学计算机科学与软件工程学院资金支持
 首页：http://www.sei.ecnu.edu.cn/
 
-作者：曹智杰 及其团队（汪贻俊、陈伟文、耿煜、陈昶嘉）
+作者：[曹智杰](https://github.com/Cardinal2376/) 及其团队（汪贻俊、陈伟文、耿煜、陈昶嘉）
