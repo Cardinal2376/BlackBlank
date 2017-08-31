@@ -44,7 +44,7 @@ $(() => {
   extend(true, window, modules);
 
 $.getJSON("http://localhost:3000/",function(result){
-	//console.log(result);
+	console.log(result);
 	RunJson(result);
   });
 	/*

@@ -16,7 +16,7 @@ class WeightedDirectedGraphTracer extends DirectedGraphTracer {
 
     if (this.isNew) initView(this);
   }
-
+  
   _weight(target, weight) {
     this.manager.pushStep(this.capsule, {
       type: 'weight',
