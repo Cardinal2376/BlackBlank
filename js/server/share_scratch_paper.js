@@ -20,6 +20,7 @@ module.exports = () => {
     const gist = {
       'description': 'temp',
       'public': true,
+	  //'author':$("#name-input").text,
       'files': {
         'data.js': {
           'content': dataEditor.getValue()

@@ -4,10 +4,15 @@ const modules = require('../module');
 const app = require('../app');
 
 function RunJson(json) {
-	var tracer = new WeightedDirectedGraphTracer();
-	console.log(tracer._setData);
 	var tracerlist = [];
-	var list = JSON.parse(json);
+	var list;
+	try{
+		list = JSON.parse(json);
+	} catch(err) {
+		console.log(err);
+		list = json;
+	}
+	
 	var tracerManager = app.getTracerManager();
 	try {
 		tracerManager.deallocateAll();
