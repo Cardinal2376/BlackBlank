@@ -2,17 +2,38 @@
 
 const modules = require('../module');
 const app = require('../app');
-
+const Toast = require('../dom/toast');
 function RunJson(json) {
-	var tracerlist = [];
-	var list;
-	try{
-		list = JSON.parse(json);
-	} catch(err) {
-		console.log(err);
-		list = json;
+	var remoteResult = JSON.parse(json);
+	console.log(remoteResult);
+	if(remoteResult.signal == 0) {
+		var list = JSON.parse(remoteResult.data);
+		RunningJson(list);
+		/*
+		if(isJSON(remoteResult.data)) {
+			var list = JSON.parse(remoteResult.data);
+			if(list.length) RunningJson(list);
+		} else {
+			Toast.showErrorToast("OUTPUT_ERROR\nPlease_do_not_using_stdout\n");
+		}
+		*/
+		
+	} else if(remoteResult.signal == -1) {
+		Toast.showErrorToast("COMPLIE_ERROR\n" + remoteResult.error);
+	} else if(remoteResult.signal == 1) {
+		Toast.showErrorToast("CPU_TIME_LIMIT_EXCEEDED");
+	} else if(remoteResult.signal == 2) {
+		Toast.showErrorToast("REAL_TIME_LIMIT_EXCEEDED");
+	} else if(remoteResult.signal == 3) {
+		Toast.showErrorToast("MEMORY_LIMIT_EXCEEDED");
+	} else if(remoteResult.signal == 4) {
+		Toast.showErrorToast("RUNTIME_ERROR");
+	} else if(remoteResult.signal == 5) {
+		Toast.showErrorToast("SYSTEM_ERROR");
 	}
-	
+}
+function RunningJson(list) {
+	var tracerlist = [];
 	var tracerManager = app.getTracerManager();
 	try {
 		tracerManager.deallocateAll();
@@ -196,6 +217,27 @@ function RunJson(json) {
 	}
 	app.setIsLoading(false);
 }
+function isJSON(str) {
+        if (typeof str == 'string') {
+            try {
+                var obj=JSON.parse(str);
+                if(str.indexOf('[')>-1){
+                    return true;
+                }else{
+					console.log("error 2");
+                    return false;
+                }
+
+            } catch(e) {
+				console.log("error 3");
+                console.log(e);
+                return false;
+            }
+        }
+		console.log("error 1");
+        return false;
+}
+
 module.exports = RunJson;
 
 /*

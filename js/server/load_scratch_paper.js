@@ -27,7 +27,10 @@ module.exports = (gistID) => {
 
         const algoData = extractGistCode(files, 'data');
         const algoCode = extractGistCode(files, 'code');
-
+		const authorname = files['author.txt'].content;
+		//console.log("authorname");
+		//console.log(authorname);
+		$("#authorname").html(authorname);
         // update scratch paper algo code with the loaded gist code
         const dir = getFileDir(category, algorithm, 'scratch_paper');
         app.updateCachedFile(dir, {

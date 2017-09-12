@@ -4,16 +4,18 @@ const app = require('../../app');
 const Server = require('../../server');
 const Toast = require('../toast');
 const TopMenu = require('../top_menu');
-
+const RunJson = require('../../runjson');
 module.exports = () => {
-
+	
   // shared
   $('#shared').mouseup(function () {
     $(this).select();
   });
 
   $('#btn_share').click(function () {
-
+	var name = $("#name-input").val();
+	console.log("name");
+	console.log(name);
     Server.shareScratchPaper().then((url) => {
 	  $('#author').text($('#name-input').val());
 	  $('#shared-link').text(url);
@@ -35,16 +37,33 @@ module.exports = () => {
   TopMenu.disableFlowControl();
 
   $btnRun.click(() => {
-    $btnTrace.click();
+	//console.log(RunJson);
+    var curLanguage = app.getLanguageState();
     $btnPause.removeClass('active');
     $btnRun.addClass('active');
     TopMenu.enableFlowControl();
-    var err = app.getEditor().execute();
-    if (err) {
-      console.error(err);
-      Toast.showErrorToast(err);
-      TopMenu.resetTopMenuButtons();
+    if(curLanguage == "javascript") {
+      //$btnTrace.click();
+      var err = app.getEditor().execute();
+      if (err) {
+        console.error(err);
+        Toast.showErrorToast(err);
+        TopMenu.resetTopMenuButtons();
+      }
+    } else {
+	  const {
+        dataEditor,
+        codeEditor
+     } = app.getEditor();
+	 var jsonObject = new Object();
+	 jsonObject.code = codeEditor.getValue();
+	 jsonObject.lang = curLanguage;
+	 console.log(jsonObject);
+	  $.post("http://182.92.182.233:3000/dopost", jsonObject, function(data, textStatus, jqXHR) {
+		RunJson(data);  
+	  });
     }
+    
   });
 
   $btnPause.click(() => {
@@ -70,6 +89,43 @@ module.exports = () => {
     app.getTracerManager().pauseStep();
     app.getTracerManager().nextStep();
   });
-
-
+  
+  $("#lang_js").click(() => {
+     const {
+        dataEditor,
+        codeEditor
+     } = app.getEditor();
+     $(".data_container").removeClass('hide');
+     dataEditor.setValue("");
+     codeEditor.setValue("");
+     $(".code_container").css('top', '40%');
+     codeEditor.session.setMode('ace/mode/javascript');
+     app.setLanguageState("javascript");
+  });
+  
+  $("#lang_cpp").click(() => {
+    const {
+        dataEditor,
+        codeEditor
+    } = app.getEditor();
+    $(".data_container").addClass('hide');
+    dataEditor.setValue("");
+    codeEditor.setValue("");
+    $(".code_container").css('top', '0');
+    codeEditor.session.setMode('ace/mode/c_cpp');
+    app.setLanguageState("cpp");
+  });
+  
+  $("#lang_java").click(() => {
+    const {
+      dataEditor,
+      codeEditor
+    } = app.getEditor();
+    $(".data_container").addClass('hide');
+    dataEditor.setValue("");
+    codeEditor.setValue("");
+    $(".code_container").css('top', '0');
+    codeEditor.session.setMode('ace/mode/java');
+    app.setLanguageState("java");
+  });
 };

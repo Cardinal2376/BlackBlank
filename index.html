@@ -38,8 +38,18 @@
             <ul class="nav navbar-nav">
             </ul>
             <ul class="nav navbar-nav navbar-right">
-				
-				<li class="active"><a id="btn_run"><span class="glyphicon glyphicon-play"></span>&nbsp;&nbsp;Run</a></li>
+				 <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					Language
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a id="lang_js" href="#">javascript</a></li>
+                    <li><a id="lang_cpp" href="#">c++</a></li>
+                    <li><a id="lang_java" href="#">java</a></li>
+                </ul>
+            </li>
+				<li><a id="btn_run"><span class="glyphicon glyphicon-play"></span>&nbsp;&nbsp;Run</a></li>
 				<li><a id="btn_prev"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;&nbsp;Prev</a></li>
 				<li><a id="btn_pause"><span class="glyphicon glyphicon-pause"></span>&nbsp;&nbsp;Pause</a></li>
                 <li><a id="btn_next"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Next</a></li>
@@ -72,7 +82,10 @@
     <div class="container">
         <!--小屏幕导航按钮和logo-->
         <div class="navbar-header">
-            
+            <ul class="nav navbar-nav navbar-left">
+				<li><p class="navbar-text">Shared by:</p></li>
+				<li><p id="authorname" class="navbar-text">Cardinal</p></li>
+            </ul>
         </div>
         <!--导航-->
 		

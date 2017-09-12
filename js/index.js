@@ -42,12 +42,13 @@ $(() => {
   
   //全局加载modules
   extend(true, window, modules);
-
+/*
 $.getJSON("http://localhost:3000/",function(result){
 	console.log(result);
 	RunJson(result);
   });
-	/*
+*/
+
   Server.loadCategories().then((data) => {
 	 console.log(data);
     app.setCategories(data);
@@ -66,13 +67,11 @@ $.getJSON("http://localhost:3000/",function(result){
 	//从gist上获取代码并可视化
 	if(isScratchPaper(category)) {
 		Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
-		console.log("exed");
 		  DOM.showAlgorithm(category, algorithm, data);
 		});
 	}
 		
   });
-  */
   var v1LoadedScratch = getHashValue('scratch-paper');
   var v2LoadedScratch = getParameterByName('scratch-paper');
   var vLoadedScratch = v1LoadedScratch || v2LoadedScratch;

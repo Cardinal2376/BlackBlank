@@ -17,6 +17,7 @@ const state = {
   tracerManager: null,
   categories: null,
   loadedScratch: null,
+  language: null
 };
 
 const initState = (tracerManager) => {
@@ -25,6 +26,7 @@ const initState = (tracerManager) => {
   state.tracerManager = tracerManager;
   state.categories = {};
   state.loadedScratch = null;
+  state.language = "javascript";
 };
 
 /**
@@ -76,7 +78,14 @@ const App = function () {
   this.setLoadedScratch = (loadedScratch) => {
     state.loadedScratch = loadedScratch;
   };
-
+  
+  this.getLanguageState = () => {
+    return state.language;
+  }
+  
+  this.setLanguageState = (language) => {
+    state.language = language;
+  }
   const tracerManager = TracerManager.init();
 
   initState(tracerManager);

@@ -11,23 +11,24 @@ const {
 
 module.exports = () => {
   return new RSVP.Promise((resolve, reject) => {
-
     const {
       dataEditor,
       codeEditor
     } = app.getEditor();
-
+	//console.log($("#name-input").text());
     const gist = {
       'description': 'temp',
       'public': true,
-	  //'author':$("#name-input").text,
       'files': {
         'data.js': {
           'content': dataEditor.getValue()
         },
         'code.js': {
           'content': codeEditor.getValue()
-        }
+        },
+		'author.txt': {
+		  'content' : $("#name-input").val()
+		}
       }
     };
 
@@ -39,7 +40,7 @@ module.exports = () => {
       const {
         href
       } = location;
-      $('#algorithm').html('Shared');
+      $('#authorname').html($("#name-input").val());
       resolve(href);
     });
   });
