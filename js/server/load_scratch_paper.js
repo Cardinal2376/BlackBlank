@@ -10,24 +10,23 @@ const {
 const getJSON = require('./ajax/get_json');
 const loadAlgorithm = require('./load_algorithm');
 
-const extractGistCode = (files, name) => files[`${name}.js`].content;
 
 module.exports = (gistID) => {
   return new RSVP.Promise((resolve, reject) => {
     app.setLoadedScratch(gistID);
 
-    getJSON(`https://api.github.com/gists/${gistID}`).then(({
-      files
-    }) => {
-
+    $.get(`http://localhost:3000/${gistID}`, function(files) {
+	files = JSON.parse(files);
+	console.log("files");
+	console.log(files);
       const category = 'scratch';
       const algorithm = gistID;
 
       loadAlgorithm(category, algorithm).then((data) => {
 
-        const algoData = extractGistCode(files, 'data');
-        const algoCode = extractGistCode(files, 'code');
-		const authorname = files['author.txt'].content;
+        const algoData = files['data'];
+        const algoCode = files['code'];
+		const authorname = files['author'];
 		//console.log("authorname");
 		//console.log(authorname);
 		$("#authorname").html(authorname);

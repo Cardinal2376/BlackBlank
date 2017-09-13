@@ -19,23 +19,15 @@ module.exports = () => {
     const gist = {
       'description': 'temp',
       'public': true,
-      'files': {
-        'data.js': {
-          'content': dataEditor.getValue()
-        },
-        'code.js': {
-          'content': codeEditor.getValue()
-        },
-		'author.txt': {
-		  'content' : $("#name-input").val()
-		}
-      }
+      'data': dataEditor.getValue(),
+      'code': codeEditor.getValue(),
+	  'author': $("#name-input").val()
     };
-
-    postJSON('https://api.github.com/gists', gist).then(({
-      id
-    }) => {
-      app.setLoadedScratch(id);
+	
+	
+    $.post('http://localhost:3000/post', JSON.stringify(gist), function(id){
+	  console.log(id);
+	  app.setLoadedScratch(id);
       setPath('scratch', id);
       const {
         href
