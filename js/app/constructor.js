@@ -114,7 +114,7 @@ const App = function () {
       $(".code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/python');
     }
-    state.language = language;
+    this.setLanguageState(language);
   };
   const tracerManager = TracerManager.init();
 
