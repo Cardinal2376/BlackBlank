@@ -107,6 +107,12 @@ const App = function () {
       state.editor.codeEditor.setValue("");
       $(".code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/java');
+    } else if(language == "python") {
+      $(".data_container").addClass('hide');
+      state.editor.dataEditor.setValue("");
+      state.editor.codeEditor.setValue("");
+      $(".code_container").css('top', '0');
+      state.editor.codeEditor.session.setMode('ace/mode/python');
     }
     state.language = language;
   };

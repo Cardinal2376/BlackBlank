@@ -101,4 +101,8 @@ module.exports = () => {
   $("#lang_java").click(() => {
     app.setEditorMode("java");
   });
+  
+  $("#lang_python").click(() => {
+    app.setEditorMode("python");
+  });
 };

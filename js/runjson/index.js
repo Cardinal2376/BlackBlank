@@ -160,7 +160,7 @@ function RunningJson(list) {
 					if(item.Event == "palette") {
 						tracerlist[item.ID].palette(itemData);
 					} else if(item.Event == "setTreeData") {
-						tracerlist[item.ID]._setTreeData(itemData);
+						tracerlist[item.ID]._setTreeData(itemData.Data, itemData.root);
 					} else if(item.Event == "visit") {
 						tracerlist[item.ID]._visit(itemData.t, itemData.s);
 					} else if(item.Event == "leave") {
@@ -172,7 +172,7 @@ function RunningJson(list) {
 					if(item.Event == "palette") {
 						tracerlist[item.ID].palette(itemData);
 					} else if(item.Event == "setTreeData") {
-						tracerlist[item.ID]._setTreeData(itemData);
+						tracerlist[item.ID]._setTreeData(itemData.Data, itemData.root);
 					} else if(item.Event == "visit") {
 						tracerlist[item.ID]._visit(itemData.t, itemData.s);
 					} else if(item.Event == "leave") {
@@ -184,7 +184,7 @@ function RunningJson(list) {
 					if(item.Event == "palette") {
 						tracerlist[item.ID].palette(itemData);
 					} else if(item.Event == "setTreeData") {
-						tracerlist[item.ID]._setTreeData(itemData);
+						tracerlist[item.ID]._setTreeData(itemData.Data, itemData.root);
 					} else if(item.Event == "weight") {
 						tracerlist[item.ID]._weight(itemData.t, itemData.w);
 					} else if(item.Event == "visit") {
@@ -196,7 +196,7 @@ function RunningJson(list) {
 					if(item.Event == "palette") {
 						tracerlist[item.ID].palette(itemData);
 					} else if(item.Event == "setTreeData") {
-						tracerlist[item.ID]._setTreeData(itemData);
+						tracerlist[item.ID]._setTreeData(itemData.Data, itemData.root);
 					} else if(item.Event == "weight") {
 						tracerlist[item.ID]._weight(itemData.t, itemData.w);
 					} else if(item.Event == "visit") {
