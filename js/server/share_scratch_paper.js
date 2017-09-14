@@ -26,7 +26,7 @@ module.exports = () => {
     };
 	
 	
-    $.post('http://localhost:3000/post', JSON.stringify(gist), function(id){
+    $.post('http://182.92.182.233:3000/post', JSON.stringify(gist), function(id){
 	  console.log(id);
 	  app.setLoadedScratch(id);
       setPath('scratch', id);

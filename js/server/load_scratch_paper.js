@@ -14,7 +14,7 @@ const loadAlgorithm = require('./load_algorithm');
 module.exports = (gistID) => {
   return new RSVP.Promise((resolve, reject) => {
     app.setLoadedScratch(gistID);
-    $.get(`http://localhost:3000/${gistID}`, function(files) {
+    $.get(`http://182.92.182.233:3000/${gistID}`, function(files) {
     files = JSON.parse(files);
     console.log("files");
     console.log(files);
