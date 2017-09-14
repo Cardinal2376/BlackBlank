@@ -14,23 +14,34 @@ const loadAlgorithm = require('./load_algorithm');
 module.exports = (gistID) => {
   return new RSVP.Promise((resolve, reject) => {
     app.setLoadedScratch(gistID);
-
     $.get(`http://localhost:3000/${gistID}`, function(files) {
-	files = JSON.parse(files);
-	console.log("files");
-	console.log(files);
-      const category = 'scratch';
-      const algorithm = gistID;
+    files = JSON.parse(files);
+    console.log("files");
+    console.log(files);
+    
+    const category = 'scratch';
+    const algorithm = gistID;
 
-      loadAlgorithm(category, algorithm).then((data) => {
-
-        const algoData = files['data'];
-        const algoCode = files['code'];
+    loadAlgorithm(category, algorithm).then((data) => {
+		
+		const algoLanguage = files['language'];
+		var algoData = "";
+    if(algoLanguage == 'javascript') algoData = files['data'];
+		app.setLanguageState(algoLanguage);
+    
+    const algoCode = files['code'];
 		const authorname = files['author'];
 		//console.log("authorname");
 		//console.log(authorname);
-		$("#authorname").html(authorname);
+    $("#authorname").html(authorname);
         // update scratch paper algo code with the loaded gist code
+		const {
+			  dataEditor,
+			  codeEditor
+		} = app.getEditor();
+		app.setEditorMode(algoLanguage);
+    dataEditor.setValue(algoData);
+    codeEditor.setValue(algoCode);
         const dir = getFileDir(category, algorithm, 'scratch_paper');
         app.updateCachedFile(dir, {
           data: algoData,
@@ -39,6 +50,7 @@ module.exports = (gistID) => {
         });
         resolve({
           category,
+          algoLanguage,
           algorithm,
           data
         });

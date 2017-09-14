@@ -91,41 +91,14 @@ module.exports = () => {
   });
   
   $("#lang_js").click(() => {
-     const {
-        dataEditor,
-        codeEditor
-     } = app.getEditor();
-     $(".data_container").removeClass('hide');
-     dataEditor.setValue("");
-     codeEditor.setValue("");
-     $(".code_container").css('top', '40%');
-     codeEditor.session.setMode('ace/mode/javascript');
-     app.setLanguageState("javascript");
+     app.setEditorMode("javacsript");
   });
   
   $("#lang_cpp").click(() => {
-    const {
-        dataEditor,
-        codeEditor
-    } = app.getEditor();
-    $(".data_container").addClass('hide');
-    dataEditor.setValue("");
-    codeEditor.setValue("");
-    $(".code_container").css('top', '0');
-    codeEditor.session.setMode('ace/mode/c_cpp');
-    app.setLanguageState("cpp");
+    app.setEditorMode("cpp");
   });
   
   $("#lang_java").click(() => {
-    const {
-      dataEditor,
-      codeEditor
-    } = app.getEditor();
-    $(".data_container").addClass('hide');
-    dataEditor.setValue("");
-    codeEditor.setValue("");
-    $(".code_container").css('top', '0');
-    codeEditor.session.setMode('ace/mode/java');
-    app.setLanguageState("java");
+    app.setEditorMode("java");
   });
 };

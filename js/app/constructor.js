@@ -85,7 +85,31 @@ const App = function () {
   
   this.setLanguageState = (language) => {
     state.language = language;
+    $("#languageSelect").text("Language: " +language);
   }
+  
+  this.setEditorMode = (language) => {
+    if(language == "javascript") {
+      $(".data_container").removeClass('hide');
+      state.editor.dataEditor.setValue("");
+      state.editor.codeEditor.setValue("");
+      $(".code_container").css('top', '40%');
+      state.editor.codeEditor.session.setMode('ace/mode/javascript');
+    } else if(language == "cpp"){
+      $(".data_container").addClass('hide');
+      state.editor.dataEditor.setValue("");
+      state.editor.codeEditor.setValue("");
+      $(".code_container").css('top', '0');
+      state.editor.codeEditor.session.setMode('ace/mode/c_cpp');
+    } else if(language == "java") {
+      $(".data_container").addClass('hide');
+      state.editor.dataEditor.setValue("");
+      state.editor.codeEditor.setValue("");
+      $(".code_container").css('top', '0');
+      state.editor.codeEditor.session.setMode('ace/mode/java');
+    }
+    state.language = language;
+  };
   const tracerManager = TracerManager.init();
 
   initState(tracerManager);

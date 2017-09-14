@@ -66,8 +66,9 @@ $.getJSON("http://localhost:3000/",function(result){
 	
 	//从gist上获取代码并可视化
 	if(isScratchPaper(category)) {
-		Server.loadScratchPaper(algorithm).then(({category, algorithm, data}) => {
-		  DOM.showAlgorithm(category, algorithm, data);
+		Server.loadScratchPaper(algorithm).then(({category, algoLanguage, algorithm, data}) => {
+		  //if(algoLanguage == 'javascript')DOM.showAlgorithm(category, algorithm, data);
+		  
 		});
 	}
 		

@@ -21,6 +21,7 @@ module.exports = () => {
       'public': true,
       'data': dataEditor.getValue(),
       'code': codeEditor.getValue(),
+	  'language': app.getLanguageState(),
 	  'author': $("#name-input").val()
     };
 	
