@@ -89,26 +89,27 @@ const App = function () {
   }
   
   this.setEditorMode = (language) => {
+    console.log(language);
     if(language == "javascript") {
-      $(".data_container").removeClass('hide');
+      if($(".data_container").hasClass('hide')) $(".data_container").removeClass('hide');
       state.editor.dataEditor.setValue("");
       state.editor.codeEditor.setValue("");
       $(".code_container").css('top', '40%');
       state.editor.codeEditor.session.setMode('ace/mode/javascript');
     } else if(language == "cpp"){
-      $(".data_container").addClass('hide');
+      if(!$(".data_container").hasClass('hide')) $(".data_container").addClass('hide');
       state.editor.dataEditor.setValue("");
       state.editor.codeEditor.setValue("");
       $(".code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/c_cpp');
     } else if(language == "java") {
-      $(".data_container").addClass('hide');
+       if(!$(".data_container").hasClass('hide')) $(".data_container").addClass('hide');
       state.editor.dataEditor.setValue("");
       state.editor.codeEditor.setValue("");
       $(".code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/java');
     } else if(language == "python") {
-      $(".data_container").addClass('hide');
+       if(!$(".data_container").hasClass('hide')) $(".data_container").addClass('hide');
       state.editor.dataEditor.setValue("");
       state.editor.codeEditor.setValue("");
       $(".code_container").css('top', '0');

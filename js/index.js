@@ -50,7 +50,6 @@ $.getJSON("http://localhost:3000/",function(result){
 */
 
   Server.loadCategories().then((data) => {
-	 console.log(data);
     app.setCategories(data);
     DOM.addCategories();
 

@@ -5,6 +5,10 @@ const Server = require('../../server');
 const Toast = require('../toast');
 const TopMenu = require('../top_menu');
 const RunJson = require('../../runjson');
+const {
+  showLoadingSlider,
+  hideLoadingSlider
+} = require('../loading_slider');
 module.exports = () => {
 	
   // shared
@@ -59,8 +63,9 @@ module.exports = () => {
 	 jsonObject.code = codeEditor.getValue();
 	 jsonObject.lang = curLanguage;
 	 console.log(jsonObject);
+   app.setIsLoading(true);
 	  $.post("http://182.92.182.233:3000/dopost", jsonObject, function(data, textStatus, jqXHR) {
-		RunJson(data);  
+      RunJson(data);
 	  });
     }
     

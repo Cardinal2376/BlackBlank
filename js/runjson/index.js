@@ -4,10 +4,28 @@ const modules = require('../module');
 const app = require('../app');
 const Toast = require('../dom/toast');
 function RunJson(json) {
-	var remoteResult = JSON.parse(json);
-	console.log(remoteResult);
+  var tracerManager = app.getTracerManager();
+  //console.log(json);
+  try {
+      var remoteResult = JSON.parse(json);
+  } catch (e) {
+      //console.log(e);
+      Toast.showErrorToast("OUTPUT_ERROR\nPlease_do_not_using_stdout\n");
+      tracerManager.removeUnallocated();
+      app.setIsLoading(false);
+      return;
+  }
+	
 	if(remoteResult.signal == 0) {
-		var list = JSON.parse(remoteResult.data);
+    try {
+        var list = JSON.parse(remoteResult.data);
+    } catch (e) {
+        //console.log(e);
+        Toast.showErrorToast("OUTPUT_ERROR\nPlease_do_not_using_stdout\n");
+        tracerManager.removeUnallocated();
+        app.setIsLoading(false);
+        return;
+    }
 		RunningJson(list);
 		/*
 		if(isJSON(remoteResult.data)) {
