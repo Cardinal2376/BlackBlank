@@ -216,6 +216,29 @@ section {
 #loading-slider.loaded {
     visibility: hidden;
 }
+.executing {
+    background: rgba(0, 174, 255, 0.4);
+    border: 1px solid #0091ea;
+    position: absolute;
+    width: 100% !important;
+    left: 0 !important;
+
+    animation: line_highlight .1s;
+}
+
+@keyframes line_highlight {
+    from {
+        background: rgba(0, 174, 255, 0.1);
+    }
+    to {
+        background: rgba(0, 174, 255, 0.4);
+    }
+}
+
+.ace_editor {
+    border-left: none;
+    border-bottom: none;
+}
 
 .line {
     position: absolute;

@@ -59,8 +59,14 @@ module.exports = () => {
         dataEditor,
         codeEditor
      } = app.getEditor();
+    var code = codeEditor.getValue();
+    const lines = code.split('\n');
+    var newLines = "";
+    lines.forEach((line, i) => {
+      newLines += (line.replace(/(.+\. *_wait *)(\( *\))/g, `$1(${i})`) + "\n");
+    });
 	 var jsonObject = new Object();
-	 jsonObject.code = codeEditor.getValue();
+	 jsonObject.code = newLines;
 	 jsonObject.lang = curLanguage;
 	 console.log(jsonObject);
    app.setIsLoading(true);

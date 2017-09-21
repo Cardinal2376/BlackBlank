@@ -15,16 +15,16 @@ int main()
 	bool swapped;
 	do {
 		swapped = false;
-		tracer._select(N - 1)._wait(16);
+		tracer._select(N - 1)._wait();
 		for (int i = 1; i < N; i++) {
-			tracer._select(i)._wait(18);
+			tracer._select(i)._wait();
 			if (D[i - 1] > D[i]) {
 				logger._print("swap " + to_string(D[i - 1]) + " and " + to_string(D[i]));
 				int temp = D[i - 1];
 				D[i - 1] = D[i];
 				D[i] = temp;
 				swapped = true;
-				tracer._notify(i - 1, D[i - 1])._notify(i, D[i])._wait(25);
+				tracer._notify(i - 1, D[i - 1])._notify(i, D[i])._wait();
 				tracer._denotify(i - 1)._denotify(i);
 			}
 			tracer._deselect(i);
