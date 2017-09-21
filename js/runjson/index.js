@@ -229,7 +229,7 @@ function RunningJson(list) {
 		tracerManager.visualize();
 	} catch (err) {
 		console.log(err);
-		return err;
+    Toast.showErrorToast(err);
 	} finally {
 		tracerManager.removeUnallocated();
 	}
