@@ -96,7 +96,7 @@ module.exports = () => {
   });
   
   $("#lang_js").click(() => {
-     app.setEditorMode("javacsript");
+     app.setEditorMode("javascript");
   });
   
   $("#lang_cpp").click(() => {

@@ -91,31 +91,29 @@ const App = function () {
   this.setEditorMode = (language) => {
     console.log(language);
     if(language == "javascript") {
-      if($(".data_container").hasClass('hide')) $(".data_container").removeClass('hide');
-      state.editor.dataEditor.setValue("");
-      state.editor.codeEditor.setValue("");
-      $(".code_container").css('top', '40%');
+      if($("#data_container").hasClass('hide')) $("#data_container").removeClass('hide');
+      $("#code_container").css('top', '40%');
+      state.editor.clearContent();
+      console.log("runned");
       state.editor.codeEditor.session.setMode('ace/mode/javascript');
     } else if(language == "cpp"){
-      if(!$(".data_container").hasClass('hide')) $(".data_container").addClass('hide');
-      state.editor.dataEditor.setValue("");
-      state.editor.codeEditor.setValue("");
-      $(".code_container").css('top', '0');
+      if(!$("#data_container").hasClass('hide')) $("#data_container").addClass('hide');
+      state.editor.clearContent();
+      $("#code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/c_cpp');
     } else if(language == "java") {
-       if(!$(".data_container").hasClass('hide')) $(".data_container").addClass('hide');
-      state.editor.dataEditor.setValue("");
-      state.editor.codeEditor.setValue("");
-      $(".code_container").css('top', '0');
+       if(!$("#data_container").hasClass('hide')) $("#data_container").addClass('hide');
+      state.editor.clearContent();
+      $("#code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/java');
     } else if(language == "python") {
-       if(!$(".data_container").hasClass('hide')) $(".data_container").addClass('hide');
-      state.editor.dataEditor.setValue("");
-      state.editor.codeEditor.setValue("");
-      $(".code_container").css('top', '0');
+       if(!$("#data_container").hasClass('hide')) $("#data_container").addClass('hide');
+      state.editor.clearContent();
+      $("#code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/python');
     }
     this.setLanguageState(language);
+    state.editor.resize();
   };
   const tracerManager = TracerManager.init();
 
