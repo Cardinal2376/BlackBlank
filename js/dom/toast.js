@@ -8,7 +8,7 @@ const showToast = (data, type) => {
     $toast.fadeOut(() => {
       $toast.remove();
     });
-  }, 3000);
+  }, 10000);
 };
 
 const showErrorToast = (err) => {

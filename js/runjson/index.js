@@ -36,17 +36,17 @@ function RunJson(json) {
 		}
 		*/
 		
-	} else if(remoteResult.signal == -1) {
+	} else if(remoteResult.result == -1) {
 		Toast.showErrorToast("COMPLIE_ERROR\n" + remoteResult.error);
-	} else if(remoteResult.signal == 1) {
+	} else if(remoteResult.result == 1) {
 		Toast.showErrorToast("CPU_TIME_LIMIT_EXCEEDED");
-	} else if(remoteResult.signal == 2) {
+	} else if(remoteResult.result == 2) {
 		Toast.showErrorToast("REAL_TIME_LIMIT_EXCEEDED");
-	} else if(remoteResult.signal == 3) {
+	} else if(remoteResult.result == 3) {
 		Toast.showErrorToast("MEMORY_LIMIT_EXCEEDED");
-	} else if(remoteResult.signal == 4) {
+	} else if(remoteResult.result == 4) {
 		Toast.showErrorToast("RUNTIME_ERROR");
-	} else if(remoteResult.signal == 5) {
+	} else if(remoteResult.result == 5) {
 		Toast.showErrorToast("SYSTEM_ERROR");
 	}
 }
