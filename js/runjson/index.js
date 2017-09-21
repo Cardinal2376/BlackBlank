@@ -5,7 +5,7 @@ const app = require('../app');
 const Toast = require('../dom/toast');
 function RunJson(json) {
   var tracerManager = app.getTracerManager();
-  //console.log(json);
+  console.log(json);
   try {
       var remoteResult = JSON.parse(json);
   } catch (e) {
@@ -36,7 +36,7 @@ function RunJson(json) {
 		}
 		*/
 		
-	} else if(remoteResult.result == -1) {
+	} else if(remoteResult.signal == -1) {
 		Toast.showErrorToast("COMPLIE_ERROR\n" + remoteResult.error);
 	} else if(remoteResult.result == 1) {
 		Toast.showErrorToast("CPU_TIME_LIMIT_EXCEEDED");
