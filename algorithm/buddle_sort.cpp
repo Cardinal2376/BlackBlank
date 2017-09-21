@@ -33,7 +33,6 @@ int main()
 		N--;
 	} while (swapped);
 	s = "original array = [";
-	logger._print("original array = [");
 	for(int i = 0; i < 7; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[7])+"]";
