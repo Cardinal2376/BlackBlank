@@ -2,7 +2,7 @@
 #include <string>
 int main()
 {
-	int D[100] = {1,9,9,6,1,1,1,8};
+	int D[100] = {9,-1,8,6,1,0,1,8};
 	int N = 8;
 	Array1DTracer tracer = Array1DTracer("Buddlesort")._setData(D, N);
     LogTracer logger = LogTracer();
