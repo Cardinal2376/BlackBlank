@@ -9,10 +9,10 @@ int board[4][4] = {
     {0,0,0,0}
 };
 int queens[4][4] = {
-    {0,0,0,0},
-    {0,0,0,0},
-    {0,0,0,0},
-    {0,0,0,0}
+    {0,0},
+    {0,0},
+    {0,0},
+    {0,0}
 };
 Array2DTracer boardTracer = Array2DTracer ("Board");
 Array2DTracer queenTracer = Array2DTracer ("Queen Positions");
@@ -58,8 +58,8 @@ bool nQ (int currentQueen,int currentCol) {
 }
 int main()
 {
-    boardTracer._setData (board[0],4,4);
-    queenTracer._setData (queens[0],4,4);
+    boardTracer._setData (board[0],4,4,4);
+    queenTracer._setData (queens[0],4,4,2);
     logger._print ("N Queens: " + to_string(N) + "X" + to_string(N) + "matrix, " + to_string(N) + " queens");
     logger._print ("Starting execution");
     nQ (0, 0);
