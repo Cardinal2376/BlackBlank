@@ -134,7 +134,7 @@ gulp.task('build', ['compile-css', 'compile-js']);
 gulp.task('connect', function () {
 
   connect.server({
-    port: process.env.PORT || 8080,
+    port: process.env.PORT || 80,
     livereload: true
   });
 });
@@ -150,7 +150,7 @@ gulp.task('watch', ['build'], function () {
 
 gulp.task('prod', ['build'], function () {
   connect.server({
-    port: process.env.PORT || 8080,
+    port: process.env.PORT || 80,
     livereload: false
   });
 });
