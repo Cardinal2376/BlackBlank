@@ -37,7 +37,7 @@ function RunJson(json) {
 		*/
 		
 	} else if(remoteResult.signal == -1) {
-		Toast.showErrorToast("COMPLIE_ERROR\n" + remoteResult.error);
+		Toast.showErrorToast("ERROR :\n" + remoteResult.error);
 	} else if(remoteResult.result == 1) {
 		Toast.showErrorToast("CPU_TIME_LIMIT_EXCEEDED");
 	} else if(remoteResult.result == 2) {
