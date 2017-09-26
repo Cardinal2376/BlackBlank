@@ -4,37 +4,37 @@ int main()
 {
 	int D[100] = {9,-1,8,6,1,0,1,8};
 	int N = 8;
-	Array1DTracer tracer = Array1DTracer("Buddlesort")._setData(D, N);
+	Array1DTracer tracer = Array1DTracer("Buddlesort").setData(D, N);
     LogTracer logger = LogTracer();
 	string s = "original array = [";
-	logger._print("original array = [");
+	logger.print("original array = [");
 	for(int i = 0; i < 7; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[7])+"]";
-	logger._print(s);
+	logger.print(s);
 	bool swapped;
 	do {
 		swapped = false;
-		tracer._select(N - 1)._wait();
+		tracer.select(N - 1).wait();
 		for (int i = 1; i < N; i++) {
-			tracer._select(i)._wait();
+			tracer.select(i).wait();
 			if (D[i - 1] > D[i]) {
-				logger._print("swap " + to_string(D[i - 1]) + " and " + to_string(D[i]));
+				logger.print("swap " + to_string(D[i - 1]) + " and " + to_string(D[i]));
 				int temp = D[i - 1];
 				D[i - 1] = D[i];
 				D[i] = temp;
 				swapped = true;
-				tracer._notify(i - 1, D[i - 1])._notify(i, D[i])._wait();
-				tracer._denotify(i - 1)._denotify(i);
+				tracer.notify(i - 1, D[i - 1]).notify(i, D[i]).wait();
+				tracer.denotify(i - 1).denotify(i);
 			}
-			tracer._deselect(i);
+			tracer.deselect(i);
 		}
-		tracer._deselect(N - 1);
+		tracer.deselect(N - 1);
 		N--;
 	} while (swapped);
 	s = "original array = [";
 	for(int i = 0; i < 7; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[7])+"]";
-	logger._print(s);
+	logger.print(s);
 }

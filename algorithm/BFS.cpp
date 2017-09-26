@@ -19,13 +19,13 @@ int G[11][11] = {
 void BFS(int s) { 
     queue <int> Q;
     Q.push(s); 
-    //tracer._visit(s, s)._wait(22);
+    //tracer.visit(s, s).wait(22);
     while (!Q.empty()) {
         int node = Q.front(); 
         for (int i = 0; i < 11; i++) {
             if (G[node][i]) { 
                 Q.push(i); 
-                tracer._visit(i, node)._wait(28);
+                tracer.visit(i, node).wait(28);
             }
         }
         Q.pop();
@@ -33,7 +33,7 @@ void BFS(int s) {
 }
 int main()
 {
-	tracer._setTreeData(G[0], 11, 11, 0);
-	tracer._attach(logger.id);
+	tracer.setTreeData(G[0], 11, 11, 0);
+	tracer.attach(logger.id);
 	BFS(0);
 }

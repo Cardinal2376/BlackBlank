@@ -2,7 +2,7 @@
 #include <string>
 int N = 8;
 int D[100] = {9,-1,8,6,1,0,1,8};
-Array1DTracer tracer = Array1DTracer("Quicksort")._setData(D, N);
+Array1DTracer tracer = Array1DTracer("Quicksort").setData(D, N);
 LogTracer logger = LogTracer();
 void partition(int* D,int low,int high) {
     int i, j, s;
@@ -11,26 +11,26 @@ void partition(int* D,int low,int high) {
         j = high;
         s = D[low];
         while (i < j) {
-            tracer._select(high)._select(low)._wait(11);
+            tracer.select(high).select(low).wait();
             while (D[j] > s){ 
-                tracer._select(j)._wait(16);
-                tracer._deselect(j);
+                tracer.select(j).wait();
+                tracer.deselect(j);
                 j--;
             }
             D[i] = D[j];
-            tracer._notify(i, D[j])._wait(21)._denotify(i);
+            tracer.notify(i, D[j]).wait().denotify(i);
             while (s >= D[i] && i < j){ 
-                tracer._select(i)._wait(20);
-                tracer._deselect(i);
+                tracer.select(i).wait();
+                tracer.deselect(i);
                 i++;
             }
             D[j] = D[i];
-            tracer._notify(j, D[i])._wait(25)._denotify(j);
-            tracer._deselect(high)._deselect(low);
+            tracer.notify(j, D[i]).wait().denotify(j);
+            tracer.deselect(high).deselect(low);
         }
         D[i] = s;
-        tracer._notify(i, s)._wait(29);
-        tracer._denotify(i);
+        tracer.notify(i, s).wait();
+        tracer.denotify(i);
         partition(D, low, i-1);
         low = i+1;
     }
@@ -42,15 +42,15 @@ void quicksort(int* D) {
 int main()
 {
 	string s = "original array = [";
-	logger._print("original array = [");
+	logger.print("original array = [");
 	for(int i = 0; i < N - 1; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[N - 1])+"]";
-	logger._print(s);
+	logger.print(s);
 	quicksort(D);
 	s = "original array = [";
 	for(int i = 0; i < N - 1; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[N - 1])+"]";
-	logger._print(s);
+	logger.print(s);
 }

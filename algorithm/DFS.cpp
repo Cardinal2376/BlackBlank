@@ -16,7 +16,7 @@ int G[11][11] = {
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 void DFS(int node,int parent) { 
-	if(parent != -1) tracer._visit(node, parent)._wait(19);
+	if(parent != -1) tracer.visit(node, parent).wait();
 	for (int i = 0; i < 11; i++) {
 		if (G[node][i]) { 
 			DFS(i, node); 
@@ -25,7 +25,7 @@ void DFS(int node,int parent) {
 }
 int main()
 {
-	tracer._setTreeData(G[0], 11, 11, 0);
-	tracer._attach(logger.id);
+	tracer.setTreeData(G[0], 11, 11, 0);
+	tracer.attach(logger.id);
 	DFS(0, -1);
 }

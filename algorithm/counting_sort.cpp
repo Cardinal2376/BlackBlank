@@ -11,25 +11,25 @@ int sortedA[100] = {0,0,0,0,0,0,0,0};
 int counts[100] =  {0,0,0,0,0,0,0,0};
 int main()
 {
-    tracer._setData(D[0],8,8);
+    tracer.setData(D[0],100,3,8);
     for (int i = 0; i < 8; i++) {
-        tracer._select(0, i)._wait();
+        tracer.select(0, i).wait();
         counts[A[i]]++;
-        tracer._notify(1, A[i], counts[A[i]])._wait();
-        tracer._deselect(0, i);
-        tracer._denotify(1, A[i])._wait();
+        tracer.notify(1, A[i], counts[A[i]]).wait();
+        tracer.deselect(0, i);
+        tracer.denotify(1, A[i]).wait();
     }
     int i = 0;
     for (int j = 0; j <= 9; j++) {
         while (counts[j] > 0) {
-            tracer._select(1, j)._wait();
+            tracer.select(1, j).wait();
             sortedA[i] = j;
             counts[j]--;
-            tracer._notify(1, j, counts[j]);
-            tracer._notify(2, i, sortedA[i])._wait();
-            tracer._deselect(1, j);
-            tracer._denotify(1, j);
-            tracer._denotify(2, i)._wait();
+            tracer.notify(1, j, counts[j]);
+            tracer.notify(2, i, sortedA[i]).wait();
+            tracer.deselect(1, j);
+            tracer.denotify(1, j);
+            tracer.denotify(2, i).wait();
             i++;
         }
     }
