@@ -27,28 +27,24 @@ function RunJson(json) {
         return;
     }
 		RunningJson(list);
-		/*
-		if(isJSON(remoteResult.data)) {
-			var list = JSON.parse(remoteResult.data);
-			if(list.length) RunningJson(list);
-		} else {
-			Toast.showErrorToast("OUTPUT_ERROR\nPlease_do_not_using_stdout\n");
-		}
-		*/
 		
-	} else if(remoteResult.signal == -1) {
-		Toast.showErrorToast("COMPLIE_ERROR\n" + remoteResult.error);
-	} else if(remoteResult.result == 1) {
-		Toast.showErrorToast("CPU_TIME_LIMIT_EXCEEDED");
-	} else if(remoteResult.result == 2) {
-		Toast.showErrorToast("REAL_TIME_LIMIT_EXCEEDED");
-	} else if(remoteResult.result == 3) {
-		Toast.showErrorToast("MEMORY_LIMIT_EXCEEDED");
-	} else if(remoteResult.result == 4) {
-		Toast.showErrorToast("RUNTIME_ERROR");
-	} else if(remoteResult.result == 5) {
-		Toast.showErrorToast("SYSTEM_ERROR");
-	}
+	} else {
+    if(remoteResult.signal == -1) {
+      Toast.showErrorToast("ERROR :\n" + remoteResult.error);
+    } else if(remoteResult.result == 1) {
+      Toast.showErrorToast("CPU_TIME_LIMIT_EXCEEDED");
+    } else if(remoteResult.result == 2) {
+      Toast.showErrorToast("REAL_TIME_LIMIT_EXCEEDED");
+    } else if(remoteResult.result == 3) {
+      Toast.showErrorToast("MEMORY_LIMIT_EXCEEDED");
+    } else if(remoteResult.result == 4) {
+      Toast.showErrorToast("RUNTIME_ERROR");
+    } else if(remoteResult.result == 5) {
+      Toast.showErrorToast("SYSTEM_ERROR");
+    }
+    app.setIsLoading(false);
+  }
+  
 }
 function RunningJson(list) {
 	var tracerlist = [];
