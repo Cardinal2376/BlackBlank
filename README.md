@@ -22,7 +22,9 @@ Black Blank是一个基于网页的算法可视化工具，它的目的在于帮
 点击下方链接亦可快速访问：
 
 [**冒泡排序**](http://182.92.182.233:8080/#path=scratch/83c6ca1f8e834da3fc64f515f1c558ae)
+
 [**动态规划(最长公共子串LCS)**](http://182.92.182.233:8080/#path=scratch/1d598b793022da0e81d0e63870089bd6)
+
 [**单源最短路(Dijkstra)**](http://182.92.182.233:8080/#path=scratch/e4ec7578631d0c52bb59b8339550518d)
 
 ### 演示模块
@@ -31,10 +33,10 @@ Black Blank是一个基于网页的算法可视化工具，它的目的在于帮
 
 具体API请参考:[**演示模块**](https://github.com/Cardinal2376/BlackBlank/wiki/Tracer)
 
-###安装文档
+### 安装文档
 本项目使用gulp一键部署，具体安装文档请参考：[**安装文档**](https://github.com/Cardinal2376/BlackBlank/wiki/Project-Details)
 
-###致谢
+### 致谢
 本项目由华东师范大学计算机科学与软件工程学院资金支持
 首页：http://www.sei.ecnu.edu.cn/
 
