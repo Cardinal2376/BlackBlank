@@ -63,7 +63,7 @@ module.exports = () => {
     const lines = code.split('\n');
     var newLines = "";
     lines.forEach((line, i) => {
-      newLines += (line.replace(/(.+\. *_wait *)(\( *\))/g, `$1(${i})`) + "\n");
+      newLines += (line.replace(/(.+\. *wait *)(\( *\))/g, `$1(${i})`) + "\n");
     });
 	 var jsonObject = new Object();
 	 jsonObject.code = newLines;
