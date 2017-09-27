@@ -5,6 +5,7 @@ const app = require('../app');
 const Toast = require('../dom/toast');
 function RunJson(json) {
   var tracerManager = app.getTracerManager();
+  tracerManager.deallocateAll();
   console.log(json);
   try {
       var remoteResult = JSON.parse(json);
