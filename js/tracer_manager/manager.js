@@ -113,6 +113,8 @@ TracerManager.prototype = {
 
       capsule.tracer.resize();
     });
+    //customized scroller
+    $(".module_wrapper").niceScroll({cursorborder:"",cursorcolor:"rgba(0,0,0,0)",boxzoom:true});
   },
 
   resize() {
@@ -230,6 +232,7 @@ TracerManager.prototype = {
   },
 
   visualize() {
+    
     this.traceIndex = -1;
     this.resumeStep();
   },
