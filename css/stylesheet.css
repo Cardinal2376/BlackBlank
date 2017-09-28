@@ -70,6 +70,13 @@ html, body{
     -ms-overflow-style: none;
     overflow: auto;
 }
+.github-fork-ribbon {
+    position: fixed;
+}
+
+.github-fork-ribbon.left-bottom:before {
+    background-color: #333;
+}
 a {
     text-decoration: none;
 }
