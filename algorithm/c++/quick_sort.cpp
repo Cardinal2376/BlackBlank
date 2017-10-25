@@ -1,7 +1,8 @@
 #include "jsoncppheader.h"
 #include <string>
-int N = 8;
-int D[100] = {9,-1,8,6,1,0,1,8};
+int D[100] = {9,8,8,6,1,7,5,7,11,9,4,2};
+int N = 12;
+ChartTracer chart = ChartTracer("Chart");
 Array1DTracer tracer = Array1DTracer("Quicksort").setData(D, N);
 LogTracer logger = LogTracer();
 void partition(int* D,int low,int high) {
@@ -41,14 +42,14 @@ void quicksort(int* D) {
 }
 int main()
 {
+    tracer.attach(chart.id);
 	string s = "original array = [";
-	logger.print("original array = [");
 	for(int i = 0; i < N - 1; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[N - 1])+"]";
 	logger.print(s);
 	quicksort(D);
-	s = "original array = [";
+	s = "sorted array = [";
 	for(int i = 0; i < N - 1; i++)
 		s+=to_string(D[i])+",";
 	s+=to_string(D[N - 1])+"]";
