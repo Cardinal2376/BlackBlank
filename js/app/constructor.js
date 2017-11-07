@@ -93,22 +93,22 @@ const App = function () {
     if(language == "javascript") {
       if($("#data_container").hasClass('hide')) $("#data_container").removeClass('hide');
       $("#code_container").css('top', '40%');
-      state.editor.clearContent();
+      //state.editor.clearContent();
       console.log("runned");
       state.editor.codeEditor.session.setMode('ace/mode/javascript');
     } else if(language == "cpp"){
       if(!$("#data_container").hasClass('hide')) $("#data_container").addClass('hide');
-      state.editor.clearContent();
+      //state.editor.clearContent();
       $("#code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/c_cpp');
     } else if(language == "java") {
        if(!$("#data_container").hasClass('hide')) $("#data_container").addClass('hide');
-      state.editor.clearContent();
+      //state.editor.clearContent();
       $("#code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/java');
     } else if(language == "python") {
        if(!$("#data_container").hasClass('hide')) $("#data_container").addClass('hide');
-      state.editor.clearContent();
+      //state.editor.clearContent();
       $("#code_container").css('top', '0');
       state.editor.codeEditor.session.setMode('ace/mode/python');
     }
